@@ -1,0 +1,159 @@
+:root {
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    font-size: var(--font-size);
+    background-color: #a4c526;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+section{
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav h1 a {
+    font-family: var(--sans);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+
+nav h1 [class*="fa-"] {
+    font-size: 100%;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover:hover {
+    color: rgb(61, 38, 38);
+}
+nav h1 [class*="fa-"] {
+    font-size: 150%;
+ }
+.page_content{
+    background-color: rgb(214, 214, 214);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 1rem;
+}
+.page_content h1{
+    background-color: #6c8da7;
+}
+
+
+
+footer{
+    background-color: #282c2f;
+    color:white;
+    padding: 1rem;
+}
+footer li{
+    list-style: none;
+}
+.footer_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.footer_logos{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5rem;
+}
+footer [class*="fa-"] {
+  
+    font-size: 150%;
+    color: rgb(209, 211, 212);
+ }
+.foot{
+    background-color: rgb(112, 116, 116);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.slot{
+    border: 2px solid black ;
+    min-height: 300px;
+    min-width: 200px;
+}
+.semi_slot{
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+}
+.semi_slot span{
+    font-size: 50px;
+}
+.admin_page{
+    min-height: 570px;
+    background-color: aliceblue;
+}
+.search_plate{
+    margin: 1rem;
+    padding: 1rem;
+}
+.entry_bar{
+    margin: 1rem;
+    padding: 1rem;
+}
+.about_page_content{
+    background-color: aliceblue;
+}
+@media (min-width: 850px) {
+    nav {
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <section>
+
+        <nav>
+            <ul>
+                <li>
+                    <h1>
+                        <a href="admin_panel.html">
+                            <span class="fa-solid fa-square-parking" aria-hidden="true"></span>
+                            <span>My Parking</span>
+                        </a>
+                    </h1>
+                </li>
+               
+            </ul>
+        </nav>
+    </section>
+    <section class="admin_page">
+        <div class="search_plate">
+
+            <form method="get" action="/admin">
+                <label for="search">Search Vehicle Plate:</label>
+                <input type="text" id="search" name="search" placeholder="Enter vehicle plate">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="entry_bar">
+            <!--entering a new vehicle -->
+
+            <form method="post" action="/entry">
+                <label for="vehicle_plate">Enter Vehicle Plate:</label>
+                <input type="text" id="vehicle_plate" name="vehicle_plate" required>
+                <button type="submit">Entry</button>
+            </form>
+        
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Vehicle Plate</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                    <th>Duration (Minutes)</th>
+                    <th>Parking Cost (RS)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in entry_exit_logs %}
+                <tr>
+                    <td>{{ log[0] }}</td>
+                    <td>{{ log[1] }}</td>
+                    <td>{{ log[2] }}</td>
+                    <td>{{ log[3] if log[3] else 'Not exited yet' }}</td>
+                    <td>
+                        {% if log[3] %}
+                            {{ (log[3] - log[2]).total_seconds() / 60 | round }}
+                        {% else %}
+                            Not applicable
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if log[3] %}
+                            {{ ((log[3] - log[2]).total_seconds() / 3600) * 10 | round(2) }}
+                        {% else %}
+                            Not applicable
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if not log[3] %}
+                        <form method="post" action="/exit/{{ log[0] }}">
+                            <button type="submit">Exit</button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    </section>
+    <section>
+        <p class="foot">
+            <small>&copy; 2023 prabesh Raj Pant. All rights reserved.</small>
+         </p>
+    </section>
+</body>
+
+</html>

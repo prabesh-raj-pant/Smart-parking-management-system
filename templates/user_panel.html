@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <section>
+
+        <nav>
+            <ul>
+                <li>
+                    <h1>
+                        <a href="{{ url_for('index') }}">
+                            <span class="fa-solid fa-square-parking" aria-hidden="true"></span>
+                            <span>My Parking</span>
+                        </a>
+                    </h1>
+                </li>
+                <li><a href="{{ url_for('about') }}">About_Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="page_content">
+        <div class="slot">
+            <h1>street-1</h1>
+            <div class="semi_slot">
+
+                <p>Parking Spaces Available: <span>{{ available_spaces }}</span> </p>
+                <p>Number of Parked Vehicles: <span>{{ parked_vehicles }}</span> </p>
+                
+            </div>
+        </div>
+        <div class="slot">
+            <h1>street-2</h1>
+        </div>
+        <div class="slot">
+            <h1>street-3</h1>
+        </div>
+        <div class="slot">
+            <h1>street-5</h1>
+        </div>
+    </section>
+    <section>
+        <footer>
+            <div class="footer_content">
+                <div>
+                    <p>
+                    <h1>My parking</h1>
+                    </p>
+                    <li><span><a href="" target="_blank"><span class="fa-solid fa-location-dot"
+                                    aria-hidden="true"></span></a></span> Mahendranagar</li>
+                    <li><span><a href="" target="_blank"><span class="fa-solid fa-phone"
+                                    aria-hidden="true"></span></a></span> +977-1234567890</li>
+                    <li><span><a href="mailto:prabeshrajpant@gmail.com" target="_blank"><span
+                                    class="fa-solid fa-envelope" aria-hidden="true"></span></a></span>
+                        prabeshrajpant@gmail.com</li>
+                </div>
+                <div>
+                    <p>
+                    <h1>About System</h1>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, culpa. Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Ipsum, nulla.</p>
+                    <div class="footer_logos">
+
+                        <li> <a href="https://www.linkedin.com/in/prabesh-raj-pant-450931232/" target="_blank"><span
+                                    class="fa-brands fa-linkedin" aria-hidden="true"></span><span
+                                    class="sr-only">linkedIn</span></a></li>
+
+                        <li><a href="" target="_blank"><span class="fa-brands fa-facebook"
+                                    aria-hidden="true"></span><span class="sr-only">facebook</span></a></li>
+
+                        <li><a href="" target="_blank"><span class="fa-brands fa-instagram"
+                                    aria-hidden="true"></span><span class="sr-only">Instagram</span></a></li>
+
+                        <li><a href="" target="_blank"><span class="fa-brands fa-twitter"
+                                    aria-hidden="true"></span><span class="sr-only">twitter</span></a></li>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <p class="foot">
+            <small>&copy; 2023 prabesh Raj Pant. All rights reserved.</small>
+        </p>
+    </section>
+</body>
+
+</html>
